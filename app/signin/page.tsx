@@ -1,16 +1,16 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 
 export default function SignIn() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="p-8 rounded shadow-lg max-w-md w-full bg-white/30 backdrop-blur-md">
+    <div className="flex min-h-screen items-center justify-center">
+      <div className="w-full max-w-md rounded bg-white/30 p-8 shadow-lg backdrop-blur-md">
         <div className="mb-6 text-center">
-          <div className="mx-auto mb-4 w-20 h-20 relative">
+          <div className="relative mx-auto mb-4 h-20 w-20">
             <Image
               src="/aws.png"
               alt="App Logo"
@@ -20,9 +20,9 @@ export default function SignIn() {
           </div>
           <h1 className="text-xl font-bold">AWS PPE TRACKER</h1>
         </div>
-        <p className="text-center mb-6">
-          Welcome to AWS Bahrain PPE Tracker Portal, where you can
-          request personal protective equipment and Arc flash suits.
+        <p className="mb-6 text-center">
+          Welcome to AWS Bahrain PPE Tracker Portal, where you can request
+          personal protective equipment and Arc flash suits.
         </p>
         <form>
           <div className="mb-4">
@@ -33,7 +33,7 @@ export default function SignIn() {
               type="email"
               id="email"
               placeholder="Email"
-              className="w-full p-2 border rounded"
+              className="w-full rounded border p-2"
               required
             />
           </div>
@@ -45,22 +45,20 @@ export default function SignIn() {
               type="password"
               id="password"
               placeholder="Password"
-              className="w-full p-2 border rounded"
+              className="w-full rounded border p-2"
               required
             />
           </div>
           <div className="mb-4 text-left">
-            <a href="#" className="text-orange-500 text-sm">
+            <a href="#" className="text-sm text-orange-500">
               Forgot password?
             </a>
           </div>
-          <Button type="submit" className="w-full p-2 rounded">
+          <Button type="submit" className="w-full rounded p-2">
             Login
           </Button>
         </form>
-        <p className="text-center mt-4">
-          Don&apos;t have an account?
-        </p>
+        <p className="mt-4 text-center">Don&apos;t have an account?</p>
       </div>
     </div>
   );

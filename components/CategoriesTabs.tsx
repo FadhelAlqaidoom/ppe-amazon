@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-} from '@/components/ui/tabs';
-import { ItemCard } from '@/components/ItemCard';
+import React, { useState } from "react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { ItemCard } from "@/components/ItemCard";
 
 interface Category {
   value: string;
@@ -24,19 +19,14 @@ interface TabsProps {
   items: Item[]; // Ensure Item type is imported or defined
 }
 
-export const CategoriesTabs: React.FC<TabsProps> = ({
-  categories,
-  items,
-}) => {
+export const CategoriesTabs: React.FC<TabsProps> = ({ categories, items }) => {
   const [selectedTab, setSelectedTab] = useState(categories[0].value);
 
   const handleTabChange = (value: string) => {
     setSelectedTab(value);
   };
 
-  const filteredItems = items.filter(
-    (item) => item.category === selectedTab
-  );
+  const filteredItems = items.filter((item) => item.category === selectedTab);
 
   return (
     <div>
@@ -49,7 +39,7 @@ export const CategoriesTabs: React.FC<TabsProps> = ({
           ))}
         </TabsList>
         <TabsContent value={selectedTab}>
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
             {filteredItems.map((item, index) => (
               <ItemCard key={index} item={item} />
             ))}

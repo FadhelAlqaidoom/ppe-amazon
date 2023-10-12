@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -6,17 +6,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import Image from 'next/image';
+} from "@/components/ui/select";
+import Image from "next/image";
 
 interface Item {
   photoUrl: string;
@@ -31,13 +31,13 @@ interface CardProps {
 }
 
 export const ItemCard: React.FC<CardProps> = ({ item }) => {
-  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedSize, setSelectedSize] = useState("");
   const [orderQuantity, setOrderQuantity] = useState(1);
 
   return (
     <Card>
       <CardHeader>
-        <div className="relative w-full h-48">
+        <div className="relative h-48 w-full">
           <Image
             src={item.photoUrl}
             alt={item.name}
@@ -47,9 +47,7 @@ export const ItemCard: React.FC<CardProps> = ({ item }) => {
         </div>
       </CardHeader>
       <CardContent>
-        <CardTitle className="text-xl font-bold mb-2">
-          {item.name}
-        </CardTitle>
+        <CardTitle className="mb-2 text-xl font-bold">{item.name}</CardTitle>
         <Select>
           <SelectTrigger className="w-full">
             {selectedSize ? (
@@ -92,10 +90,7 @@ export const ItemCard: React.FC<CardProps> = ({ item }) => {
         </div>
       </CardContent>
       <CardFooter>
-        <Button
-          onClick={() => alert('Item added to cart')}
-          className="w-full"
-        >
+        <Button onClick={() => alert("Item added to cart")} className="w-full">
           Add to cart
         </Button>
       </CardFooter>
