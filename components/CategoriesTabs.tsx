@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { ItemCard } from "@/components/ItemCard";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 interface Category {
   value: string;
@@ -12,31 +13,38 @@ interface Item {
   name: string;
   sizeOptions: string[];
   quantityAvailable: number;
-  category: string; // Adding category property based on your requirements
+  category: string;
 }
 
 interface TabsProps {
   categories: Category[];
-  items: Item[]; // Ensure Item type is imported or defined
+  items: Item[];
 }
 
 export const CategoriesTabs: React.FC<TabsProps> = ({ categories, items }) => {
-  const [selectedTab, setSelectedTab] = useState(categories[0].value);
+  const selectedTab = categories[0].value;
 
   const filteredItems = items.filter((item) => item.category === selectedTab);
 
   return (
     <div>
       <Tabs defaultValue={categories[0].value}>
-        <TabsList className="flex justify-between">
-          {categories.map((category, index) => (
-            <TabsTrigger key={index} value={category.value} className="w-full">
-              {category.label}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+        <ScrollArea className="max-w-full lg:max-w-none">
+          <TabsList className="flex ">
+            {categories.map((category, index) => (
+              <TabsTrigger
+                key={index}
+                value={category.value}
+                className="p-auto w-full sm:w-full"
+              >
+                {category.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          <ScrollBar orientation="horizontal" className="invisible" />
+        </ScrollArea>
         <TabsContent value={selectedTab}>
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
+          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 ">
             {filteredItems.map((item, index) => (
               <ItemCard key={index} item={item} />
             ))}
