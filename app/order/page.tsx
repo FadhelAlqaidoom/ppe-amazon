@@ -59,7 +59,7 @@ const items = [
 
 const Order = () => {
   return (
-    <div className="flex min-h-screen flex-col items-start p-20 px-4">
+    <div className=" flex min-h-screen  flex-col items-start px-4 pt-20">
       <div className="mx-auto w-full max-w-7xl">
         <CategoriesTabs categories={categories} items={items} />
       </div>
