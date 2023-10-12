@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { CategoriesTabs } from '@/components/CategoriesTabs';
+import { Tabs } from '@radix-ui/react-tabs';
 
 const categories = [
   { value: 'hand_protection', label: 'Hand protection' },
@@ -72,7 +73,7 @@ const items = [
 // };
 const Order = () => {
   return (
-    <div className="flex flex-col items-start min-h-screen bg-gray-50 px-4 p-20">
+    <div className="flex flex-col items-start min-h-screen px-4 p-20">
       <div className="w-full max-w-7xl mx-auto">
         <CategoriesTabs categories={categories} items={items} />
       </div>

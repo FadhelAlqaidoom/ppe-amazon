@@ -55,5 +55,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: url('/PPE.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }

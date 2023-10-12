@@ -7,8 +7,8 @@ import { Label } from '@/components/ui/label';
 
 export default function SignIn() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="p-8 bg-white rounded shadow-lg max-w-md w-full">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="p-8 rounded shadow-lg max-w-md w-full bg-white/30 backdrop-blur-md">
         <div className="mb-6 text-center">
           <div className="mx-auto mb-4 w-20 h-20 relative">
             <Image
